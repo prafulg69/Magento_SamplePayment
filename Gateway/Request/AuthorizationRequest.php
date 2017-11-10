@@ -8,6 +8,7 @@ namespace Magento\SamplePaymentGateway\Gateway\Request;
 use Magento\Payment\Gateway\ConfigInterface;
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Payment\Gateway\Request\BuilderInterface;
+use Magento\Framework\Encryption\EncryptorInterface;
 
 class AuthorizationRequest implements BuilderInterface
 {
@@ -17,12 +18,21 @@ class AuthorizationRequest implements BuilderInterface
     private $config;
 
     /**
+     * @var EncryptorInterface
+     */
+    private $encryptor;
+
+
+
+    /**
      * @param ConfigInterface $config
      */
     public function __construct(
-        ConfigInterface $config
+        ConfigInterface $config,
+        \Magento\Framework\Encryption\EncryptorInterface $encryptor
     ) {
         $this->config = $config;
+        $this->encryptor = $encryptor;
     }
 
     /**
@@ -53,7 +63,24 @@ class AuthorizationRequest implements BuilderInterface
             'MERCHANT_KEY' => $this->config->getValue(
                 'merchant_gateway_key',
                 $order->getStoreId()
-            )
+            ),
+             'MERCHANT_ID' =>$this->encryptor->decrypt($this->config->getValue(
+                'axis_merchant_id',
+                $order->getStoreId()
+            )),
+              'ACCESS_CODE' =>$this->encryptor->decrypt($this->config->getValue(
+                'axis_access_code',
+                $order->getStoreId()
+            )),
+            'HASH_KEY' =>$this->encryptor->decrypt($this->config->getValue(
+                'axis_hash_key',
+                $order->getStoreId()
+            )),
+             'GATEWAY_URL' =>$this->encryptor->decrypt($this->config->getValue(
+                'axis_gateway_url',
+                $order->getStoreId()
+            )),
+
         ];
     }
 }

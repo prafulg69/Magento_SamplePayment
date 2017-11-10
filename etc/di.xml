@@ -32,7 +32,7 @@
         </arguments>
     </virtualType>
 
-    <type name="Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock">
+    <type name="Magento\SamplePaymentGateway\Gateway\Http\Client\Axis\ClientMock">
         <arguments>
             <argument name="logger" xsi:type="object">SamplePaymentGatewayLogger</argument>
         </arguments>
@@ -55,7 +55,7 @@
             <argument name="requestBuilder" xsi:type="object">SamplePaymentGatewayAuthorizationRequest</argument>
             <argument name="handler" xsi:type="object">SamplePaymentGatewayResponseHandlerComposite</argument>
             <argument name="transferFactory" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\TransferFactory</argument>
-            <argument name="client" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock</argument>
+            <argument name="client" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\Client\Axis\ClientMock</argument>
         </arguments>
     </virtualType>
 
@@ -81,7 +81,7 @@
             <argument name="handler" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Response\TxnIdHandler</argument>
             <argument name="transferFactory" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\TransferFactory</argument>
             <argument name="validator" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Validator\ResponseCodeValidator</argument>
-            <argument name="client" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock</argument>
+            <argument name="client" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\Client\Axis\ClientMock</argument>
         </arguments>
     </virtualType>
 
@@ -99,7 +99,7 @@
             <argument name="handler" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Response\TxnIdHandler</argument>
             <argument name="transferFactory" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\TransferFactory</argument>
             <argument name="validator" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Validator\ResponseCodeValidator</argument>
-            <argument name="client" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock</argument>
+            <argument name="client" xsi:type="object">Magento\SamplePaymentGateway\Gateway\Http\Client\Axis\ClientMock</argument>
         </arguments>
     </virtualType>
 

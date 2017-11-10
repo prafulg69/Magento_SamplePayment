@@ -7,7 +7,7 @@ namespace Magento\SamplePaymentGateway\Gateway\Request;
 
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Payment\Gateway\Request\BuilderInterface;
-use Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock;
+use Magento\SamplePaymentGateway\Gateway\Http\Client\Axis\ClientMock;
 
 class MockDataRequest implements BuilderInterface
 {

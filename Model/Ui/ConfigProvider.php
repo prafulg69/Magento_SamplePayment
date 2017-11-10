@@ -6,7 +6,7 @@
 namespace Magento\SamplePaymentGateway\Model\Ui;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
-use Magento\SamplePaymentGateway\Gateway\Http\Client\ClientMock;
+use Magento\SamplePaymentGateway\Gateway\Http\Client\Axis\ClientMock;
 
 /**
  * Class ConfigProvider
